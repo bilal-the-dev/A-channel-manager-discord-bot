@@ -1,10 +1,13 @@
-# WHAT DOES THE BOT DO?
+# Discord Channel Management Bot
 
-A discord bot that lets your members create a channel and whoever creates has permissions to manage it as well (pin message , change name etc)
-If the channel gets inactive for a certain time you can configure, the bot will archive the channel. If it remains inactive even after archiving it'll delete the channel. Making the channel active will restore it to the original category.
+## What Does the Bot Do?
 
-/set_config = set the configuration
-/create = create a channel that creator can manage
+This Discord bot empowers your members by allowing them to create and manage their own channels. The creator of a channel will have permissions to manage it, including pinning messages and changing the channel name. If a channel becomes inactive for a configurable period, the bot will archive it. If the channel remains inactive even after being archived, the bot will delete it. Reactivating the channel will restore it to its original category.
+
+### Key Commands:
+
+- `/set_config` - Set the bot's configuration settings.
+- `/create` - Create a channel that the creator can manage.
 
 ## Social Media link
 
