@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "discord.js": "^14.15.2",
+    "dotenv": "^16.4.5",
+    "node-cron": "^3.0.3",
+    "wokcommands": "^2.1.9"
+  }
+}
