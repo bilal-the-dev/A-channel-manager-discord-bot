@@ -27,8 +27,8 @@ client.on("ready", async (readyClient) => {
   // client.guilds.cache.get("1239804781468586024").commands.set([]);
   console.log(`${readyClient.user.username} is running 🧶`);
 
-  cron.schedule("* * * * *", checkForChannelsToBeArchived);
-  cron.schedule("* * * * *", checkForChannelsToBeDeleted);
+  cron.schedule("*/5 * * * *", checkForChannelsToBeArchived);
+  cron.schedule("*/5 * * * *", checkForChannelsToBeDeleted);
   checkForChannelsToBeArchived();
   checkForChannelsToBeDeleted();
   new WOK({
@@ -86,8 +86,8 @@ async function checkForChannelsToBeArchived() {
       const messageTimestamp =
         lastMessageNotBot?.createdTimestamp || channel.createdTimestamp;
       const curDate = Date.now();
-      const timeToArchive = 1000 * 60 * 2;
-      const timeToSendArchiveMessage = 1000 * 60 * 1;
+      const timeToArchive = 30 * 24 * 60 * 60 * 1000;
+      const timeToSendArchiveMessage = 23 * 24 * 60 * 60 * 1000;
 
       if (
         messageTimestamp + timeToSendArchiveMessage < curDate &&
@@ -128,8 +128,6 @@ async function checkForChannelsToBeDeleted() {
 
   for (const ch of allChannels) {
     try {
-      console.log(ch.name);
-
       const i = channelData.findIndex((c) => c.channelId === ch.id);
 
       console.log(channelData);
@@ -159,9 +157,8 @@ async function checkForChannelsToBeDeleted() {
         lastMessageNotBot?.createdTimestamp || ch.createdTimestamp;
       const content = lastBotMessage.content ?? "";
       const curDate = Date.now();
-      const timeToDelete = 1000 * 60 * 4;
-      const timeToSendDeleteMessage = 1000 * 60 * 3;
-
+      const timeToDelete = 60 * 24 * 60 * 60 * 1000;
+      const timeToSendDeleteMessage = 53 * 24 * 60 * 60 * 1000;
       const hasCrossedLmit =
         messageTimestamp + timeToSendDeleteMessage < curDate;
       const revertChannel = messageTimestamp > channel.archivedAt;
