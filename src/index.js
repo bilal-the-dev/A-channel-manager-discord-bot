@@ -6,7 +6,6 @@ const cron = require("node-cron");
 
 const channelData = require("./../data/channelData.json");
 const { writeChannelData, moveChannel } = require("./utils/channel");
-const { error } = require("console");
 
 const { DefaultCommands } = WOK;
 dotenv.config();
@@ -132,6 +131,10 @@ async function checkForChannelsToBeDeleted() {
       console.log(ch.name);
 
       const i = channelData.findIndex((c) => c.channelId === ch.id);
+
+      console.log(channelData);
+
+      console.log(i);
 
       if (i === -1) continue;
 
