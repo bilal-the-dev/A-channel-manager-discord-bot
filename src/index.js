@@ -129,9 +129,13 @@ async function checkForChannelsToBeDeleted() {
 
   for (const ch of allChannels) {
     try {
+      console.log(ch.name);
+
       const i = channelData.findIndex((c) => c.channelId === ch.id);
 
       if (i === -1) continue;
+
+      console.log("found channel");
 
       const channel = channelData[i];
 
