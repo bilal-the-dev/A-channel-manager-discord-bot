@@ -12,7 +12,7 @@ module.exports = {
   description: "Configure the categories",
   type: CommandType.SLASH,
   guildOnly: true,
-  // permissions: [PermissionFlagsBits.Administrator],
+  permissions: [PermissionFlagsBits.Administrator],
   options: [
     {
       name: "category_1",
