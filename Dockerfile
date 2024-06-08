@@ -1,4 +1,9 @@
+# Select slim version
 FROM node:lts-bookworm-slim
+
+#  Optimize Node.js tooling for production
+ENV NODE_ENV production
+
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
